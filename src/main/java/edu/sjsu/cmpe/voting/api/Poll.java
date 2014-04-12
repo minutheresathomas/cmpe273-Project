@@ -26,10 +26,10 @@ public class Poll {
 	private Set<Choice> choices;
 	
 	@JsonProperty
-	private Date start;
+	private Date startDate;
 	
 	@JsonProperty
-	private Date end;	
+	private Date endDate;	
 	
 	public String getId() {
 		return id;
@@ -57,17 +57,17 @@ public class Poll {
 		this.choices = choices;
 	}
 	
-	public Date getStart() {
-		return start;
+	public Date getStartDate() {
+		return startDate;
 	}
-	public void setStart(Date start) {
-		this.start = start;
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
 	}
-	public Date getEnd() {
-		return end;
+	public Date getEndDate() {
+		return endDate;
 	}
-	public void setEnd(Date end) {
-		this.end = end;
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 	
 }

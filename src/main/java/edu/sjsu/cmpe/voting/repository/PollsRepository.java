@@ -5,7 +5,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.SecureRandom;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -53,6 +56,7 @@ public class PollsRepository implements PollsRepositoryInterface {
 		String key = createID();
 		newPoll.setId(key);
 		System.out.println("(from the repository) Question is : " + newPoll.getQuestion());
+		System.out.println("(from the repository-savePoll) Start date is : " + newPoll.getStartDate());
 //			Iterator<Choice> it = newPoll.getChoices().iterator();
 //			while(it.hasNext())
 //			{
@@ -94,12 +98,17 @@ public class PollsRepository implements PollsRepositoryInterface {
 	public List<Poll> getPolls()
 	{
 		List<Poll> polls = new ArrayList<Poll>();
-		Iterator<String> it = pollInMemoryMap.keySet().iterator();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+	       //get current date time with Date()
+	    Date date = new Date();
+	    System.out.println("Today's date is : "+dateFormat.format(date));
+	    System.out.println("date is : "+date);
+	    Iterator<String> it = pollInMemoryMap.keySet().iterator();
 		while(it.hasNext())
 		{
 			String key = it.next();
+			System.out.println("Poll start date is : "+pollInMemoryMap.get(key).getStartDate());
 			polls.add(pollInMemoryMap.get(key));
-			System.out.println("question in hash repository is : "+pollInMemoryMap.get(key));
 		}
 		return polls;
 	}
