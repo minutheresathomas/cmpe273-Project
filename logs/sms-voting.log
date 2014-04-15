@@ -794,3 +794,148 @@ INFO  [2014-04-12 21:55:55,208] com.sun.jersey.api.container.filter.LoggingFilte
 2 < 
 {"Links":[{"rel":"view-poll","href":"/polls/37ee","method":"GET"}],"Questions":{"37ee":"What is your favorite color?"}}
 
+WARN  [2014-04-12 22:40:18,138] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2014-04-12 22:40:18,391] com.yammer.dropwizard.cli.ServerCommand: Starting sms-voting-service
+INFO  [2014-04-12 22:40:18,392] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2014-04-12 22:40:18,649] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2014-04-12 22:40:18,939] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    DELETE  /sms-voting/v1/admin/polls/{id} (edu.sjsu.cmpe.voting.resources.ModeratorPollResource)
+    GET     /sms-voting/v1/admin/polls (edu.sjsu.cmpe.voting.resources.ModeratorPollResource)
+    GET     /sms-voting/v1/admin/polls/{id} (edu.sjsu.cmpe.voting.resources.ModeratorPollResource)
+    POST    /sms-voting/v1/admin/polls (edu.sjsu.cmpe.voting.resources.ModeratorPollResource)
+    GET     /sms-voting/v1/user/polls (edu.sjsu.cmpe.voting.resources.UserPollResource)
+    GET     /sms-voting/v1/user/polls/{id} (edu.sjsu.cmpe.voting.resources.UserPollResource)
+    PUT     /sms-voting/v1/user/polls/{id} (edu.sjsu.cmpe.voting.resources.UserPollResource)
+    GET     /sms-voting/ (edu.sjsu.cmpe.voting.ui.resources.UserResource)
+
+INFO  [2014-04-12 22:40:18,939] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2014-04-12 22:40:19,684] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2014-04-12 22:40:19,691] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2014-04-13 00:32:42,953] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2014-04-13 00:32:42,954] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2014-04-13 00:32:44,662] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2014-04-13 00:32:44,663] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/Users/venkatreddy/Desktop/273/cmpe273-Project/target/classes/}
+INFO  [2014-04-13 00:32:46,811] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/Users/venkatreddy/Desktop/273/cmpe273-Project/target/classes/}
+INFO  [2014-04-13 00:32:46,812] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+WARN  [2014-04-13 00:33:10,977] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2014-04-13 00:33:11,575] com.yammer.dropwizard.cli.ServerCommand: Starting sms-voting-service
+INFO  [2014-04-13 00:33:11,581] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2014-04-13 00:33:12,207] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2014-04-13 00:33:12,439] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    DELETE  /sms-voting/v1/admin/polls/{id} (edu.sjsu.cmpe.voting.resources.ModeratorPollResource)
+    GET     /sms-voting/v1/admin/polls (edu.sjsu.cmpe.voting.resources.ModeratorPollResource)
+    GET     /sms-voting/v1/admin/polls/{id} (edu.sjsu.cmpe.voting.resources.ModeratorPollResource)
+    POST    /sms-voting/v1/admin/polls (edu.sjsu.cmpe.voting.resources.ModeratorPollResource)
+    GET     /sms-voting/v1/user/polls (edu.sjsu.cmpe.voting.resources.UserPollResource)
+    GET     /sms-voting/v1/user/polls/{id} (edu.sjsu.cmpe.voting.resources.UserPollResource)
+    PUT     /sms-voting/v1/user/polls/{id} (edu.sjsu.cmpe.voting.resources.UserPollResource)
+    GET     /sms-voting/ (edu.sjsu.cmpe.voting.ui.resources.UserResource)
+
+INFO  [2014-04-13 00:33:12,439] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2014-04-13 00:33:13,880] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2014-04-13 00:33:13,891] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2014-04-13 00:42:49,601] com.sun.jersey.api.container.filter.LoggingFilter: 1 * Server in-bound request
+1 > GET http://localhost:8080/sms-voting/v1/polls
+1 > Host: localhost:8080
+1 > Accept: */*
+1 > Postman-Token: 37e9df51-2447-ae2b-f568-04f7a70465e6
+1 > Content-Type: application/json
+1 > Accept-Language: en-US,en;q=0.8
+1 > User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+1 > Connection: keep-alive
+1 > Cache-Control: no-cache
+1 > Accept-Encoding: gzip,deflate,sdch
+1 > 
+
+INFO  [2014-04-13 00:42:49,627] com.sun.jersey.api.container.filter.LoggingFilter: 1 * Server out-bound response
+1 < 404
+1 < 
+
+INFO  [2014-04-13 00:42:55,877] com.sun.jersey.api.container.filter.LoggingFilter: 2 * Server in-bound request
+2 > GET http://localhost:8080/sms-voting/v1/polls/
+2 > Host: localhost:8080
+2 > Accept: */*
+2 > Postman-Token: 805eda4d-35f7-3075-de61-3743c364d44c
+2 > Content-Type: application/json
+2 > Accept-Language: en-US,en;q=0.8
+2 > User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+2 > Connection: keep-alive
+2 > Cache-Control: no-cache
+2 > Accept-Encoding: gzip,deflate,sdch
+2 > 
+
+INFO  [2014-04-13 00:42:55,877] com.sun.jersey.api.container.filter.LoggingFilter: 2 * Server out-bound response
+2 < 404
+2 < 
+
+INFO  [2014-04-13 00:43:15,734] com.sun.jersey.api.container.filter.LoggingFilter: 3 * Server in-bound request
+3 > GET http://localhost:8080/sms-voting/v1/polls/
+3 > Host: localhost:8080
+3 > Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+3 > Accept-Language: en-us
+3 > User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/537.75.14
+3 > Connection: keep-alive
+3 > Accept-Encoding: gzip, deflate
+3 > 
+
+INFO  [2014-04-13 00:43:15,734] com.sun.jersey.api.container.filter.LoggingFilter: 3 * Server out-bound response
+3 < 404
+3 < 
+
+INFO  [2014-04-13 00:43:22,237] com.sun.jersey.api.container.filter.LoggingFilter: 4 * Server in-bound request
+4 > GET http://localhost:8080/sms-voting/v1/
+4 > Host: localhost:8080
+4 > Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+4 > Accept-Language: en-us
+4 > User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/537.75.14
+4 > Connection: keep-alive
+4 > Accept-Encoding: gzip, deflate
+4 > 
+
+INFO  [2014-04-13 00:43:22,238] com.sun.jersey.api.container.filter.LoggingFilter: 4 * Server out-bound response
+4 < 404
+4 < 
+
+INFO  [2014-04-13 00:47:13,236] com.sun.jersey.api.container.filter.LoggingFilter: 5 * Server in-bound request
+5 > GET http://localhost:8080/sms-voting/v1/
+5 > Host: localhost:8080
+5 > Accept: */*
+5 > Postman-Token: a69b54c4-a8b8-0d5a-3425-08be1088fdf8
+5 > Content-Type: application/json
+5 > Accept-Language: en-US,en;q=0.8
+5 > User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+5 > Connection: keep-alive
+5 > Cache-Control: no-cache
+5 > Accept-Encoding: gzip,deflate,sdch
+5 > 
+
+INFO  [2014-04-13 00:47:13,236] com.sun.jersey.api.container.filter.LoggingFilter: 5 * Server out-bound response
+5 < 404
+5 < 
+
