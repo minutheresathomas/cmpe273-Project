@@ -141,7 +141,8 @@ public class PollsRepository implements PollsRepositoryInterface {
 		{
 			if(option.equalsIgnoreCase(c.getOption()))
 			{
-				c.setCount(SmsVotingUtils.incrementCounter());
+				long increment = c.getCount()+1;
+				c.setCount(increment);
 				System.out.println("count of " + c.getOption() + " is : " + c.getCount());
 				break;
 			}
