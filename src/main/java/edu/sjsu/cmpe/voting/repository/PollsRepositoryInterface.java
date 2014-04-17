@@ -3,6 +3,7 @@
  */
 package edu.sjsu.cmpe.voting.repository;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -64,4 +65,6 @@ public interface PollsRepositoryInterface {
 	 * 			option that the user has voted for
 	 */
 	void setCountForOption(String id, String option);
+	
+	void updatePollDate(String id, Date endDate);
 }

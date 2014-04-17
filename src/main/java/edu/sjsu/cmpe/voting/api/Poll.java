@@ -23,7 +23,7 @@ public class Poll {
 	
 	@Valid
 	@JsonProperty
-	private Set<Choice> choices;
+	private List<Choice> choices;
 	
 	@JsonProperty
 	private Date startDate;
@@ -50,13 +50,21 @@ public class Poll {
 		this.question = question;
 	}
 
-	public Set<Choice> getChoices() {
+//	public Set<Choice> getChoices() {
+//		return choices;
+//	}
+//	public void setChoices(Set<Choice> choices) {
+//		this.choices = choices;
+//	}
+	
+	public List<Choice> getChoices() {
 		return choices;
 	}
-	public void setChoices(Set<Choice> choices) {
+	public void setChoices(List<Choice> choices) {
 		this.choices = choices;
 	}
 	
+	//----------
 	public Date getStartDate() {
 		return startDate;
 	}

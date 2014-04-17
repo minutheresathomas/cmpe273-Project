@@ -12,17 +12,11 @@
             <div class="container">
                 <div class="jumbotron">
                     <!-- calls getPolls() from HomeResource -->
-                    <table id="poll" class="table table-hover">
-                    {{#poll}}
-                        <tr>
-							<td>{{id}}</td>
-							<td>{{question}}</td>
-							<td>{{category}}</td>
-							<td>{{status}}</td>
-							<td><button id="{{isbn}}" type="button" class="btn btn-primary">Report Lost</button></td>
-                        </tr>
-                    {{/book}}
-                    </table>
+                    <ul>
+	                    {{#poll}}
+	                        <li> <a id="{{id}}" href="{{id}}"> {{question}} </a> </li>
+	                    {{/poll}}
+                    </ul>
                 </div>
             </div> <!-- end of container -->
            
@@ -32,6 +26,6 @@
             <!-- Latest compiled and minified JavaScript -->
 			<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 			<!-- application ui scripts -->
-			<script src="../assets/js/app.js"></script>
+			<!-- <script src="../assets/js/sms.js"></script> -->
         </body>
 </html>

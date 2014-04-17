@@ -148,7 +148,14 @@ public class PollsRepository implements PollsRepositoryInterface {
 			}
 		}
 	}
-	
-	
+
+	/* (non-Javadoc)
+	 * @see edu.sjsu.cmpe.voting.repository.PollsRepositoryInterface#updatePollDate(java.lang.String, java.util.Date)
+	 */
+	@Override
+	public void updatePollDate(String id, Date startDate) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

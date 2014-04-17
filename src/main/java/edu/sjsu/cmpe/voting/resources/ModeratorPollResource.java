@@ -1,6 +1,10 @@
 package edu.sjsu.cmpe.voting.resources;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -11,9 +15,11 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -39,6 +45,10 @@ public class ModeratorPollResource {
 	 * Moderator Polls resource constructor
 	 * @param pollsRepository
 	 */
+//	public ModeratorPollResource(PollsRepositoryInterface pollsRepository) {
+//		this.pollsRepository = pollsRepository;
+//	}
+	
 	public ModeratorPollResource(PollsRepositoryInterface pollsRepository) {
 		this.pollsRepository = pollsRepository;
 	}
@@ -124,6 +134,35 @@ public class ModeratorPollResource {
     		pollsRepository.removePoll(id);
 	    	PollsDto links = new PollsDto();
 	    	links.addLink(new PollDto("create-poll", "/polls", "POST"));
+	    	return Response.ok(links).build();
+    	}
+    	catch(WebApplicationException e) {
+    		e.printStackTrace();
+			return Response.noContent().build();
+    	}
+    }
+	
+	/**
+	 * 
+	 * 5. Update the creation date if the poll
+	 * @throws ParseException 
+	 */
+	
+	@PUT
+    @Path("/{id}")
+    @Timed(name = "update-poll")
+    public Response updateDatePollById(@PathParam("id") String id,
+    		@QueryParam("endDate") String dateString) throws ParseException
+    {
+		try {
+	    	DateFormat formatter ; 
+	    	Date date ; 
+	    	   formatter = new SimpleDateFormat("yyyy-MM-dd");
+	    	   date = formatter.parse(dateString);
+	    	System.out.println("Date input is : "+date);
+	        pollsRepository.updatePollDate(id,date);
+	    	PollsDto links = new PollsDto();
+	    	links.addLink(new PollDto("view-poll", "/polls", "GET"));
 	    	return Response.ok(links).build();
     	}
     	catch(WebApplicationException e) {

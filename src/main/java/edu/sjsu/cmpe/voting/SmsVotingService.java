@@ -1,5 +1,6 @@
 package edu.sjsu.cmpe.voting;
 
+import java.net.UnknownHostException;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.sun.jersey.api.container.filter.LoggingFilter;
@@ -12,10 +13,12 @@ import com.yammer.dropwizard.views.ViewBundle;
 
 import edu.sjsu.cmpe.voting.SmsVotingServiceConfiguration;
 import edu.sjsu.cmpe.voting.api.Poll;
+import edu.sjsu.cmpe.voting.repository.PollsDBRepository;
 import edu.sjsu.cmpe.voting.repository.PollsRepository;
 import edu.sjsu.cmpe.voting.repository.PollsRepositoryInterface;
 import edu.sjsu.cmpe.voting.resources.ModeratorPollResource;
 import edu.sjsu.cmpe.voting.resources.UserPollResource;
+import edu.sjsu.cmpe.voting.ui.resources.AdminResource;
 import edu.sjsu.cmpe.voting.ui.resources.UserResource;
 
 public class SmsVotingService extends Service<SmsVotingServiceConfiguration>{
@@ -35,7 +38,7 @@ public class SmsVotingService extends Service<SmsVotingServiceConfiguration>{
 	
 	@Override
 	public void run(SmsVotingServiceConfiguration config,
-					Environment environment)
+					Environment environment) throws UnknownHostException
 	{
 		environment.setJerseyProperty(ResourceConfig.PROPERTY_CONTAINER_REQUEST_FILTERS, 
 				LoggingFilter.class.getName());
@@ -43,8 +46,9 @@ public class SmsVotingService extends Service<SmsVotingServiceConfiguration>{
     			LoggingFilter.class.getName());
     	
     	/** Sms-Voting Moderator APIs */
-    	PollsRepositoryInterface pollsRepository = new PollsRepository(
-    		new ConcurrentHashMap<String, Poll>());
+//    	PollsRepositoryInterface pollsRepository = new PollsRepository(
+//    		new ConcurrentHashMap<String, Poll>());
+    	PollsRepositoryInterface pollsRepository = new PollsDBRepository();
     	environment.addResource(new ModeratorPollResource(pollsRepository));
     	
     	/** Sms-Voting User APIs */
@@ -52,5 +56,6 @@ public class SmsVotingService extends Service<SmsVotingServiceConfiguration>{
     	
     	/** Sms-Voting User UI */
     	environment.addResource(new UserResource(pollsRepository));
+    	environment.addResource(new AdminResource(pollsRepository));
 	}
 }
