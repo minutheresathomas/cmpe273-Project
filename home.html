@@ -12,39 +12,7 @@
   </style>
 </head>
 <body>
-<p class="p1">&lt;html&gt;<br>
-&lt;head&gt;<br>
-&lt;title&gt;Test Page&lt;/title&gt;<br>
-&lt;/head&gt;<br>
-&lt;body&gt;<br>
-&lt;div class="loginform-in"&gt;<br>
-&lt;h1&gt;User Login&lt;/h1&gt;<br>
-&lt;div class="err" id="add_err"&gt;&lt;/div&gt;<br>
-&lt;fieldset&gt;<br>
-&lt;form action="./" method="post"&gt;<br>
-&lt;ul&gt;<br>
-&lt;li&gt; &lt;label for="name"&gt;Username &lt;/label&gt;<br>
-&lt;input type="text" size="30" name="name" id="name" /&gt;&lt;/li&gt;<br>
-&lt;li&gt; &lt;label for="name"&gt;Password&lt;/label&gt;<br>
-&lt;input type="password" size="30" name="word" id="word" /&gt;&lt;/li&gt;<br>
-&lt;li&gt; &lt;label&gt;&lt;/label&gt;<br>
-&lt;input type="submit" id="login" name="login" value="Login" class="loginbutton" &gt;&lt;/li&gt;<br>
-&lt;/ul&gt;<br>
-&lt;/form&gt; <br>
-&lt;/fieldset&gt;<br>
-&lt;/div&gt;<br>
-&lt;div id="fb-root"&gt;<br>
-&lt;/div&gt;<br>
-&lt;script&gt;<br>
-window.fbAsyncInit = function() {<br>
-FB.init({<br>
-appId : '1426704734247108',<br>
-status : true, <br>
-cookie : true, <br>
-xfbml : true <br>
-});<br>
-<br>
-<br>
+<p class="p1"><br>
 FB.Event.subscribe('auth.authResponseChange', function(response) {<br>
 if (response.status === 'connected') {<br>
 testAPI();<br>
