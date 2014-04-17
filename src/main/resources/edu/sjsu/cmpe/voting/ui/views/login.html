@@ -7,84 +7,85 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="1265.19">
   <style type="text/css">
-    li.li1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Consolas; background-color: #f7f7ff}
-    li.li2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Consolas; background-color: #f7f7ff; min-height: 15.0px}
+    li.li1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #323333; background-color: #ebebeb}
+    span.s1 {font: 13.0px Consolas; color: #000000; background-color: #f7f7ff}
+    span.s2 {color: #0088cc}
     span.Apple-tab-span {white-space:pre}
     ol.ol1 {list-style-type: decimal}
   </style>
 </head>
 <body>
 <ol class="ol1">
-  <li class="li1"><span class="Apple-tab-span">	</span>&lt;html&gt;</li>
-  <li class="li1">&lt;head&gt;</li>
-  <li class="li1"><span class="Apple-tab-span">	</span>&lt;title&gt;Test Page&lt;/title&gt;</li>
-  <li class="li1">&lt;/head&gt;</li>
-  <li class="li1">&lt;body&gt;</li>
-  <li class="li1">&lt;div class="loginform-in"&gt;</li>
-  <li class="li1">&lt;h1&gt;User Login&lt;/h1&gt;</li>
-  <li class="li1">&lt;div class="err" id="add_err"&gt;&lt;/div&gt;</li>
-  <li class="li1">&lt;fieldset&gt;</li>
-  <li class="li1"><span class="Apple-tab-span">	</span>&lt;form action="./" method="post"&gt;</li>
-  <li class="li1">&lt;ul&gt;</li>
-  <li class="li1"><span class="Apple-tab-span">	</span>&lt;li&gt; &lt;label for="name"&gt;Username &lt;/label&gt;</li>
-  <li class="li1"><span class="Apple-tab-span">	</span>&lt;input type="text" size="30"<span class="Apple-converted-space">  </span>name="name" id="name"<span class="Apple-converted-space">  </span>/&gt;&lt;/li&gt;</li>
-  <li class="li1"><span class="Apple-tab-span">	</span>&lt;li&gt; &lt;label for="name"&gt;Password&lt;/label&gt;</li>
-  <li class="li1"><span class="Apple-tab-span">	</span>&lt;input type="password" size="30"<span class="Apple-converted-space">  </span>name="word" id="word"<span class="Apple-converted-space">  </span>/&gt;&lt;/li&gt;</li>
-  <li class="li1"><span class="Apple-tab-span">	</span>&lt;li&gt; &lt;label&gt;&lt;/label&gt;</li>
-  <li class="li1"><span class="Apple-tab-span">	</span>&lt;input type="submit" id="login" name="login" value="Login" class="loginbutton" &gt;&lt;/li&gt;</li>
-  <li class="li1">&lt;/ul&gt;</li>
-  <li class="li1"><span class="Apple-converted-space">         </span>&lt;/form&gt;<span class="Apple-tab-span">	</span></li>
-  <li class="li1">&lt;/fieldset&gt;</li>
-  <li class="li1">&lt;/div&gt;</li>
-  <li class="li1">&lt;div id="fb-root"&gt;</li>
-  <li class="li1">&lt;/div&gt;</li>
-  <li class="li1">&lt;script&gt;</li>
-  <li class="li1"><span class="Apple-converted-space">  </span>window.fbAsyncInit = function() {</li>
-  <li class="li1"><span class="Apple-converted-space">  </span>FB.init({</li>
-  <li class="li1"><span class="Apple-converted-space">    </span>appId<span class="Apple-converted-space">      </span>: '1426704734247108',</li>
-  <li class="li1"><span class="Apple-converted-space">    </span>status <span class="Apple-converted-space">    </span>: true,<span class="Apple-converted-space"> </span></li>
-  <li class="li1"><span class="Apple-converted-space">    </span>cookie <span class="Apple-converted-space">    </span>: true,<span class="Apple-converted-space"> </span></li>
-  <li class="li1"><span class="Apple-converted-space">    </span>xfbml<span class="Apple-converted-space">      </span>: true <span class="Apple-converted-space"> </span></li>
-  <li class="li1"><span class="Apple-converted-space">  </span>});</li>
-  <li class="li2"><br></li>
-  <li class="li2"><span class="Apple-converted-space">  </span></li>
-  <li class="li1"><span class="Apple-converted-space">  </span>FB.Event.subscribe('auth.authResponseChange', function(response) {</li>
-  <li class="li1"><span class="Apple-converted-space">    </span>if (response.status === 'connected') {</li>
-  <li class="li1"><span class="Apple-converted-space">      </span>testAPI();</li>
-  <li class="li1"><span class="Apple-converted-space">    </span>} else if (response.status === 'not_authorized') {</li>
-  <li class="li1"><span class="Apple-converted-space">      </span>FB.login();</li>
-  <li class="li1"><span class="Apple-converted-space">    </span>} else {</li>
-  <li class="li1"><span class="Apple-converted-space">      </span>FB.login();</li>
-  <li class="li1"><span class="Apple-converted-space">    </span>}</li>
-  <li class="li1"><span class="Apple-converted-space">  </span>});</li>
-  <li class="li1"><span class="Apple-converted-space">  </span>};</li>
-  <li class="li2"><br></li>
-  <li class="li1"><span class="Apple-converted-space">  </span>(function(d){</li>
-  <li class="li1"><span class="Apple-converted-space">   </span>var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];</li>
-  <li class="li1"><span class="Apple-converted-space">   </span>if (d.getElementById(id)) {return;}</li>
-  <li class="li1"><span class="Apple-converted-space">   </span>js = d.createElement('script'); js.id = id; js.async = true;</li>
-  <li class="li1"><span class="Apple-converted-space">   </span>js.src = "//connect.facebook.net/en_US/all.js";</li>
-  <li class="li1"><span class="Apple-converted-space">   </span>ref.parentNode.insertBefore(js, ref);</li>
-  <li class="li1"><span class="Apple-converted-space">  </span>}(document));</li>
-  <li class="li1"><span class="Apple-converted-space">  </span>function testAPI() {</li>
-  <li class="li1"><span class="Apple-converted-space">    </span>console.log('Welcome!<span class="Apple-converted-space">  </span>Fetching your information.... ');</li>
-  <li class="li1"><span class="Apple-converted-space">    </span>FB.api('/me', function(response) {</li>
-  <li class="li1"><span class="Apple-converted-space">      </span>console.log('Good to see you, ' + response.name + '.');</li>
-  <li class="li1"><span class="Apple-converted-space">    </span>});</li>
-  <li class="li1"><span class="Apple-converted-space">  </span>}</li>
-  <li class="li2"><span class="Apple-converted-space">  </span></li>
-  <li class="li2"><span class="Apple-converted-space">  </span></li>
-  <li class="li1">(function(d, s, id) {</li>
-  <li class="li1"><span class="Apple-converted-space">  </span>var js, fjs = d.getElementsByTagName(s)[0];</li>
-  <li class="li1"><span class="Apple-converted-space">  </span>if (d.getElementById(id)) return;</li>
-  <li class="li1"><span class="Apple-converted-space">  </span>js = d.createElement(s); js.id = id;</li>
-  <li class="li1"><span class="Apple-converted-space">  </span>js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&amp;appId=1426704734247108";</li>
-  <li class="li1"><span class="Apple-converted-space">  </span>fjs.parentNode.insertBefore(js, fjs);</li>
-  <li class="li1">}(document, 'script', 'facebook-jssdk'));</li>
-  <li class="li1">&lt;/script&gt;</li>
-  <li class="li1">&lt;div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"&gt;&lt;/div&gt;</li>
-  <li class="li1">&lt;/body&gt;</li>
-  <li class="li1">&lt;/html&gt;</li>
+  <li class="li1"><span class="s1"><span class="Apple-tab-span">	</span></span>&lt;html&gt;<br>
+&lt;head&gt;<br>
+&lt;title&gt;Test Page&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&lt;div class="loginform-in"&gt;<br>
+&lt;h1&gt;User Login&lt;/h1&gt;<br>
+&lt;div class="err" id="add_err"&gt;&lt;/div&gt;<br>
+&lt;fieldset&gt;<br>
+&lt;form action="./" method="post"&gt;<br>
+&lt;ul&gt;<br>
+&lt;li&gt; &lt;label for="name"&gt;Username &lt;/label&gt;<br>
+&lt;input type="text" size="30" name="name" id="name" /&gt;&lt;/li&gt;<br>
+&lt;li&gt; &lt;label for="name"&gt;Password&lt;/label&gt;<br>
+&lt;input type="password" size="30" name="word" id="word" /&gt;&lt;/li&gt;<br>
+&lt;li&gt; &lt;label&gt;&lt;/label&gt;<br>
+&lt;input type="submit" id="login" name="login" value="Login" class="loginbutton" &gt;&lt;/li&gt;<br>
+&lt;/ul&gt;<br>
+&lt;/form&gt; <br>
+&lt;/fieldset&gt;<br>
+&lt;/div&gt;<br>
+&lt;div id="fb-root"&gt;<br>
+&lt;/div&gt;<br>
+&lt;script&gt;<br>
+window.fbAsyncInit = function() {<br>
+FB.init({<br>
+appId : '1426704734247108',<br>
+status : true, <br>
+cookie : true, <br>
+xfbml : true <br>
+});<br>
+<br>
+<br>
+FB.Event.subscribe('auth.authResponseChange', function(response) {<br>
+if (response.status === 'connected') {<br>
+testAPI();<br>
+} else if (response.status === 'not_authorized') {<br>
+FB.login();<br>
+} else {<br>
+FB.login();<br>
+}<br>
+});<br>
+};<br>
+<br>
+(function(d){<br>
+var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];<br>
+if (d.getElementById(id)) {return;}<br>
+js = d.createElement('script'); js.id = id; js.async = true;<br>
+js.src = "//<a href="https://sjsu.instructure.com/connect.facebook.net/en_US/all.js"><span class="s2">connect.facebook.net/en_US/all.js</span></a>";<br>
+ref.parentNode.insertBefore(js, ref);<br>
+}(document));<br>
+function testAPI() {<br>
+console.log('Welcome! Fetching your information.... ');<br>
+FB.api('/me', function(response) {<br>
+console.log('Good to see you, ' + response.name + '.');<br>
+});<br>
+}<br>
+<br>
+<br>
+(function(d, s, id) {<br>
+var js, fjs = d.getElementsByTagName(s)[0];<br>
+if (d.getElementById(id)) return;<br>
+js = d.createElement(s); js.id = id;<br>
+js.src = "//<a href="https://sjsu.instructure.com/connect.facebook.net/en_GB/all.js#xfbml=1&amp;appId=1426704734247108"><span class="s2">connect.facebook.net/en_GB/all.js#xfbml=1&amp;appId=1426704734247108</span></a>";<br>
+fjs.parentNode.insertBefore(js, fjs);<br>
+}(document, 'script', 'facebook-jssdk'));<br>
+&lt;/script&gt;<br>
+&lt;div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"&gt;&lt;/div&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;</li>
 </ol>
 </body>
 </html>
