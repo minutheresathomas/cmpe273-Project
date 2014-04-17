@@ -13,7 +13,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
@@ -169,8 +168,8 @@ public class PollsDBRepository implements PollsRepositoryInterface{
 				 BasicDBObject choice = (BasicDBObject) choiceList.get(i);
 				 if(option.equals(choice.get("option")))
 				 {
-					 	long count = (Long) choice.get("count");
-						System.out.println("the count is: "+count);
+			long count = (Long) choice.get("count");
+				System.out.println("the count is: "+count);
 						long increment = count+1;
 						choice.put("count", increment);
 						collection.save(pollDoc);
