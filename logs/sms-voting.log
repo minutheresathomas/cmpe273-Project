@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INFO  [2014-04-16 07:09:46,057] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
 INFO  [2014-04-16 07:09:46,058] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
 INFO  [2014-04-16 07:09:46,059] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
@@ -5,6 +6,9 @@ INFO  [2014-04-16 07:09:46,059] org.eclipse.jetty.server.Server: Graceful shutdo
 INFO  [2014-04-16 07:09:48,110] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/Users/minu/Documents/workspace-sts-3.4.0.RELEASE/sms-voting-service/target/classes/}
 INFO  [2014-04-16 07:09:48,110] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
 WARN  [2014-04-16 07:09:50,555] com.yammer.dropwizard.config.ServerFactory: 
+=======
+WARN  [2014-04-16 23:51:05,186] com.yammer.dropwizard.config.ServerFactory: 
+>>>>>>> e58a695e31b7858dcddd0fadba6761271ed3c78d
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
@@ -14,10 +18,17 @@ WARN  [2014-04-16 07:09:50,555] com.yammer.dropwizard.config.ServerFactory:
 !      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<<<<<<< HEAD
 INFO  [2014-04-16 07:09:50,620] com.yammer.dropwizard.cli.ServerCommand: Starting sms-voting-service
 INFO  [2014-04-16 07:09:50,622] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
 INFO  [2014-04-16 07:09:50,730] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
 INFO  [2014-04-16 07:09:50,815] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+=======
+INFO  [2014-04-16 23:51:06,035] com.yammer.dropwizard.cli.ServerCommand: Starting sms-voting-service
+INFO  [2014-04-16 23:51:06,041] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2014-04-16 23:51:06,513] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2014-04-16 23:51:06,668] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+>>>>>>> e58a695e31b7858dcddd0fadba6761271ed3c78d
 
     DELETE  /sms-voting/v1/admin/polls/{id} (edu.sjsu.cmpe.voting.resources.ModeratorPollResource)
     GET     /sms-voting/v1/admin/polls (edu.sjsu.cmpe.voting.resources.ModeratorPollResource)
@@ -29,6 +40,7 @@ INFO  [2014-04-16 07:09:50,815] com.yammer.dropwizard.config.Environment: The fo
     GET     /sms-voting/user/polls/ (edu.sjsu.cmpe.voting.ui.resources.UserResource)
     GET     /sms-voting/user/polls//{id} (edu.sjsu.cmpe.voting.ui.resources.UserResource)
 
+<<<<<<< HEAD
 INFO  [2014-04-16 07:09:50,815] com.yammer.dropwizard.config.Environment: tasks = 
 
     POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
@@ -11260,3 +11272,11 @@ INFO  [2014-04-17 00:32:35,663] com.sun.jersey.api.container.filter.LoggingFilte
         </body>
 </html>
 
+=======
+INFO  [2014-04-16 23:51:06,668] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2014-04-16 23:51:07,585] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2014-04-16 23:51:07,597] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+>>>>>>> e58a695e31b7858dcddd0fadba6761271ed3c78d
