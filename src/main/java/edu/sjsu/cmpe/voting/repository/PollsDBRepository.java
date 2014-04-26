@@ -212,6 +212,7 @@ public class PollsDBRepository implements PollsRepositoryInterface{
 
 	/* (non-Javadoc)
 	 * @see edu.sjsu.cmpe.voting.repository.PollsRepositoryInterface#getPollByQue(java.lang.String)
+	 * Search poll with Question substring
 	 */
 	@Override
 	public List<Poll> getPollByQue(String que) {

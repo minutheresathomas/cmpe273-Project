@@ -29,6 +29,7 @@ public interface PollsRepositoryInterface {
 	 * 
 	 * @return a hashmap with all the poll entries
 	 */
+	HashMap<Long, Object> iterateHashMap() throws Exception;
 	
 	/**
 	 * Remove the poll in the repository based on the id
@@ -65,5 +66,22 @@ public interface PollsRepositoryInterface {
 	 */
 	void setCountForOption(String id, String option);
 	
+	/**
+	 * update the end date of each poll based on admin entry of the poll 
+	 * 
+	 * @param id
+	 * 			id of the poll
+	 * @param endDate
+	 * 			end date that the admin has provided for the Poll
+	 */
 	void updatePollDate(String id, Date endDate);
+	
+	/**
+	 * Get the polls based on user search 
+	 * 
+	 * @param que
+	 * 			sub string of the poll
+	 *
+	 */
+	List<Poll> getPollByQue(String que);
 }
