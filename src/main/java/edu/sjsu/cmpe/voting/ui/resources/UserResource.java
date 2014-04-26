@@ -47,7 +47,7 @@ public class UserResource {
     @GET
     @Path("/searchPolls")
     public UserView getSearchPoll(@QueryParam("question") String que) {
-    	System.out.println("getting the poll based on search!...");
+    	System.out.println("getting the poll based on search with question sub string!...");
     	List<Poll> myPolls = pollRepository.getPollByQue(que);
     	return new UserView(myPolls);
     }
