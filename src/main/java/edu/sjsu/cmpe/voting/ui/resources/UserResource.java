@@ -39,6 +39,11 @@ public class UserResource {
     	return new PollView(myPoll);
     }
     
+    /**
+     * Search for polls by question sub string
+     * @param que
+     * @return
+     */
     @GET
     @Path("/searchPolls")
     public UserView getSearchPoll(@QueryParam("question") String que) {

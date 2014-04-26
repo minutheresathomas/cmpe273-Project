@@ -98,6 +98,7 @@ public class UserPollResource {
 	/**
 	 * 4. Search with sub string
 	 * 		Resource : GET - /polls/?question={que}
+	 * 		Param - question sub-string
 	 */
 	@GET
 	@Timed(name="search-poll")
