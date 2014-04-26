@@ -29,7 +29,6 @@ public interface PollsRepositoryInterface {
 	 * 
 	 * @return a hashmap with all the poll entries
 	 */
-	HashMap<Long, Object> iterateHashMap() throws Exception;
 	
 	/**
 	 * Remove the poll in the repository based on the id

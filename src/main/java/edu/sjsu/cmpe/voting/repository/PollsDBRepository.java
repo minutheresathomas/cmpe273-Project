@@ -112,15 +112,7 @@ public class PollsDBRepository implements PollsRepositoryInterface{
 	    return polls;
 	}
 
-	/* (non-Javadoc)
-	 * @see edu.sjsu.cmpe.voting.repository.PollsRepositoryInterface#iterateHashMap()
-	 */
-	@Override
-	public HashMap<Long, Object> iterateHashMap() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	/* (non-Javadoc)
 	 * @see edu.sjsu.cmpe.voting.repository.PollsRepositoryInterface#removePoll(java.lang.String)
 	 */
@@ -191,6 +183,7 @@ public class PollsDBRepository implements PollsRepositoryInterface{
 	/* (non-Javadoc)
 	 * @see edu.sjsu.cmpe.voting.repository.PollsRepositoryInterface#updatePollDate(java.lang.String, java.util.Date)
 	 */
+    // Update the polls collection based on the end date
 	@Override
 	public void updatePollDate(String id, Date endDate) {
 		BasicDBObject query = new BasicDBObject("_id", id);

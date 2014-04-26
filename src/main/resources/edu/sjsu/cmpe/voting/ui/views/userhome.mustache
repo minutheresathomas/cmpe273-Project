@@ -1,23 +1,56 @@
 <html>
-<<<<<<< HEAD
         <head>
             <title>Home</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <!-- Latest compiled and minified CSS -->
-           <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+           	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
-          <!-- Optional theme -->
-          <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+          	<!-- Optional theme -->
+          	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+        	
+        	
         </head>
         <body>
+        	<!-- FB integration SDK -->
+        	<div id="fb-root">
+	        	<h4>
+	        	Web Voting </h4>
+        	</div>
+		    <script>
+		      window.fbAsyncInit = function() {
+		        FB.init({
+		          appId      : '{627796963977885}',
+		          status     : true,
+		          xfbml      : true
+		        });
+		      };
+		
+		      (function(d, s, id){
+		        var js, fjs = d.getElementsByTagName(s)[0];
+		        if (d.getElementById(id)) {return;}
+		        js = d.createElement(s); js.id = id;
+		        js.src = "//connect.facebook.net/en_US/all.js";
+		        fjs.parentNode.insertBefore(js, fjs);
+		      }(document, 'script', 'facebook-jssdk'));
+		    </script>
             <div class="container">
                 <div class="jumbotron">
-                    <!-- calls getPolls() from HomeResource -->
-                    <ul>
-	                    {{#poll}}
-	                        <li> <a id="{{id}}" href="{{id}}"> {{question}} </a> </li>
-	                    {{/poll}}
-                    </ul>
+                <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
+					<!--<script id="searchPoll" type="text/template"> -->
+						<div>
+							<label>Question</label>
+							<input id="queSubString" type="text" class="span3" placeholder="Type a Question SubString">
+							<input id="search" type="image" value="Remove" src="../../../assets/js/search.jpeg" width="20" height="20" />
+							<span class="help-inline">eg:subject as in "What is your favorite subject?"</span>
+						</div>
+                    <!-- calls getPolls() from UserResource -->
+                    <div>
+	                    <ul>
+		                    {{#poll}}
+		                        <li> <a id="{{id}}" href="{{id}}"> {{question}} </a> </li>
+		                    {{/poll}}
+	                    </ul>
+	                </div>
                 </div>
             </div> <!-- end of container -->
            
@@ -27,27 +60,6 @@
             <!-- Latest compiled and minified JavaScript -->
 			<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 			<!-- application ui scripts -->
-			<!-- <script src="../assets/js/sms.js"></script> -->
+			<script src="../../../assets/js/search.js"></script> 
         </body>
 </html>
-=======
-<body>
-<div class="loginform-in">
-<h1>User Login</h1>
-<div class="err" id="add_err"></div>
-<fieldset>
-	<form action="./" method="post">
-		<ul>
-			<li> <label for="name">Username </label>
-			<input type="text" size="30"  name="name" id="name"  /></li>
-			<li> <label for="name">Password</label>
-			<input type="password" size="30"  name="word" id="word"  /></li>
-			<li> <label></label>
-			<input type="submit" id="login" name="login" value="Login" class="loginbutton" ></li>
-		</ul>
-         </form>	
-</fieldset>
-</div>
-</body>
-<html>
->>>>>>> e58a695e31b7858dcddd0fadba6761271ed3c78d

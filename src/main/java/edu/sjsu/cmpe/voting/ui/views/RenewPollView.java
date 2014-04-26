@@ -9,6 +9,7 @@ import edu.sjsu.cmpe.voting.api.Poll;
 public class RenewPollView extends View{
 	private final List<Poll> polls;
 	
+    // render the renewpoll
     public RenewPollView(List<Poll> polls) {
 	super("renewpolls.mustache");
 	this.polls = polls;
