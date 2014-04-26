@@ -94,4 +94,27 @@ public class UserPollResource {
 		myMap.put("Poll", pollById);
 		return myMap;
 	}
+	
+	/**
+	 * 4. Search with sub string
+	 * 		Resource : GET - /polls/?question={que}
+	 */
+	@GET
+	@Timed(name="search-poll")
+	@Path("/searchPolls")
+	public HashMap<String, Object> searchPoll(@QueryParam("question") String que)
+	{
+		List<Poll> polls = pollsRepository.getPollByQue(que);
+		HashMap<String, Object> myMap = new HashMap<String, Object>();
+		List<PollDto> pollLinks = new ArrayList<PollDto>();
+		for(Poll p : polls)
+		{
+			myMap.put(p.getId(), p.getQuestion());
+			pollLinks.add(new PollDto("view-poll", "/polls/"+p.getId(), "GET"));
+		}
+		HashMap<String, Object> responseMap = new HashMap<String, Object>();
+		responseMap.put("Questions", myMap);
+		responseMap.put("Links", pollLinks);
+		return responseMap;
+	}
 }

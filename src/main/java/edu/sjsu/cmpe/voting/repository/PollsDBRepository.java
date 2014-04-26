@@ -13,6 +13,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
+import java.util.regex.Pattern;
+
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
@@ -20,7 +22,6 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
-import com.mongodb.QueryBuilder;
 
 import edu.sjsu.cmpe.voting.api.Choice;
 import edu.sjsu.cmpe.voting.api.Poll;
@@ -111,7 +112,15 @@ public class PollsDBRepository implements PollsRepositoryInterface{
 	    return polls;
 	}
 
-	
+	/* (non-Javadoc)
+	 * @see edu.sjsu.cmpe.voting.repository.PollsRepositoryInterface#iterateHashMap()
+	 */
+	@Override
+	public HashMap<Long, Object> iterateHashMap() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	/* (non-Javadoc)
 	 * @see edu.sjsu.cmpe.voting.repository.PollsRepositoryInterface#removePoll(java.lang.String)
 	 */
@@ -154,44 +163,81 @@ public class PollsDBRepository implements PollsRepositoryInterface{
 	 */
 	@Override
 	public void setCountForOption(String id, String option) {
-		BasicDBObject updateCountObj = new BasicDBObject();
 		BasicDBObject query = new BasicDBObject("_id", id);
 		DBCursor cursor = collection.find(query);
-		if(cursor.hasNext())
-		{
-			DBObject pollDoc = cursor.next();
-			System.out.println("the document is: "+pollDoc);
-			BasicDBList choiceList = (BasicDBList) pollDoc.get("Choices");
-			System.out.println("the option is: "+choiceList);
-			 for(int i=0 ; i<choiceList.size() ; i++)
-			 {
-				 BasicDBObject choice = (BasicDBObject) choiceList.get(i);
-				 if(option.equals(choice.get("option")))
+		try {
+			if(cursor.hasNext())
+			{
+				DBObject pollDoc = cursor.next();
+				System.out.println("the document is: "+pollDoc);
+				BasicDBList choiceList = (BasicDBList) pollDoc.get("Choices");
+				System.out.println("the option is: "+choiceList);
+				 for(int i=0 ; i<choiceList.size() ; i++)
 				 {
-			long count = (Long) choice.get("count");
-				System.out.println("the count is: "+count);
-						long increment = count+1;
-						choice.put("count", increment);
-						collection.save(pollDoc);
-						break;
+					 BasicDBObject choice = (BasicDBObject) choiceList.get(i);
+					 if(option.equals(choice.get("option")))
+					 {
+						 	long count = (Long) choice.get("count");
+							System.out.println("the count is: "+count);
+							long increment = count+1;
+							choice.put("count", increment);
+							collection.save(pollDoc);
+							break;
+					 }
 				 }
-			 }
+			}
+		} finally {
+			cursor.close();
 		}
 	}
 
 	/* (non-Javadoc)
 	 * @see edu.sjsu.cmpe.voting.repository.PollsRepositoryInterface#updatePollDate(java.lang.String, java.util.Date)
 	 */
-    // Update the polls collection based on the end date
 	@Override
 	public void updatePollDate(String id, Date endDate) {
 		BasicDBObject query = new BasicDBObject("_id", id);
 		DBCursor cursor = collection.find(query);
-		if(cursor.hasNext())
-		{
-			DBObject pollDoc = cursor.next();
-			pollDoc.put("EndDate", endDate);
-			collection.save(pollDoc);
+		try {
+			if(cursor.hasNext())
+			{
+				DBObject pollDoc = cursor.next();
+				pollDoc.put("EndDate", endDate);
+				collection.save(pollDoc);
+			}
+		} finally {
+			cursor.close();
 		}
+	}
+
+	/* (non-Javadoc)
+	 * @see edu.sjsu.cmpe.voting.repository.PollsRepositoryInterface#getPollByQue(java.lang.String)
+	 */
+	@Override
+	public List<Poll> getPollByQue(String que) {
+		List<Poll> polls = new ArrayList<Poll>();
+		List<Choice> choices = new ArrayList<Choice>();
+		String pattern = "^.*"+que+".*$";
+		Pattern match = Pattern.compile(pattern, java.util.regex.Pattern.MULTILINE);
+		BasicDBObject query = new BasicDBObject("question", match);
+		DBCursor cursor = collection.find(query);
+		try {
+			while(cursor.hasNext())
+			{
+				DBObject pollDoc = cursor.next();
+				Poll copyPoll = new Poll();
+				copyPoll.setId((String) pollDoc.get("_id"));
+		    	copyPoll.setQuestion((String) pollDoc.get("question"));
+		    	copyPoll.setStartDate((Date) pollDoc.get("startDate"));
+		    	copyPoll.setEndDate((Date) pollDoc.get("endDate"));
+		    	choices = (List<Choice>) pollDoc.get("Choices");
+		    	copyPoll.setChoices(choices);
+		    	// add the current poll to list of polls for display
+		    	polls.add(copyPoll);
+			}
+		} finally {
+			cursor.close();
+		}
+		return polls;
 	}
 }
