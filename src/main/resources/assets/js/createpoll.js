@@ -27,9 +27,9 @@ alert("obj"+obj);
 
 
 
-var createdate=$("#datepicker").val();
+var createdate=$("#datepicker1").val();
 alert(createdate);
-var expirydate=$("#datepicker").val();
+var expirydate=$("#datepicker2").val();
 jQuery.ajax({
 type: "POST",
 url: "http://localhost:8080/sms-voting/v1/admin/polls",
