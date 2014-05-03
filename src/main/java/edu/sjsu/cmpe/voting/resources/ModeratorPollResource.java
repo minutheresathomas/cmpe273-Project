@@ -72,7 +72,7 @@ public class ModeratorPollResource {
 		pollLink.add(new PollDto("view-poll", "/polls/" + poll.getId() , "GET"));
 		myMap.put("polls", pollLink);
 		} catch(Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}
 		return myMap;
 	}
