@@ -44,7 +44,7 @@ public class AWSEmail {
 		// Set AWS access credentials.
 		AmazonSimpleEmailServiceClient client =
 				new AmazonSimpleEmailServiceClient(
-						new BasicAWSCredentials("AKIAIG3MNOEPPAEMJNPQ", "ipVDJEkPYu8JsKF8B7uajvBHEgmZab2rHdYVWUUW"));
+						new BasicAWSCredentials("", ""));
 
 		// Call Amazon SES to send the message. 
 		try {
