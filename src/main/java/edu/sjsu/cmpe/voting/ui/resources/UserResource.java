@@ -11,7 +11,10 @@ import javax.ws.rs.core.MediaType;
 
 import edu.sjsu.cmpe.voting.api.Poll;
 import edu.sjsu.cmpe.voting.repository.PollsRepositoryInterface;
+import edu.sjsu.cmpe.voting.ui.views.AdminView;
+import edu.sjsu.cmpe.voting.ui.views.CreatePollView;
 import edu.sjsu.cmpe.voting.ui.views.PollView;
+import edu.sjsu.cmpe.voting.ui.views.RenewPollView;
 import edu.sjsu.cmpe.voting.ui.views.UserView;
 
 @Path("/user/polls/")
@@ -35,8 +38,21 @@ public class UserResource {
     public PollView getIndividualPoll(@PathParam("id") String id) {
     	System.out.println("getting the poll based on id!...");
     	Poll myPoll = pollRepository.getPollById(id);
-    	System.out.println("My poll is : question : "+myPoll.getQuestion());
     	return new PollView(myPoll);
+    }
+    
+    @GET
+    @Path("/createPoll")
+    public CreatePollView getCreatePoll() {
+    	CreatePollView a = new CreatePollView();
+    	return a;
+    }
+    
+    @GET
+    @Path("/renewPolls")
+    public RenewPollView getRenewPollsPage() {
+		System.out.println("getting the polls!...");
+    	return new RenewPollView(pollRepository.getPolls());
     }
     
     /**
