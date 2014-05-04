@@ -25,17 +25,20 @@ import com.mongodb.MongoClient;
 
 import edu.sjsu.cmpe.voting.api.Choice;
 import edu.sjsu.cmpe.voting.api.Poll;
+import edu.sjsu.cmpe.voting.api.User;
 
 public class PollsDBRepository implements PollsRepositoryInterface{
 	MongoClient mongoClient;
 	DB db;
 	DBCollection collection;
+	DBCollection collection1;
 	
 	public PollsDBRepository() throws UnknownHostException
 	{
 		mongoClient = new MongoClient();
 		db = mongoClient.getDB("sms-voting");
 		collection = db.getCollection("polls");
+		collection1 = db.getCollection("users");
 	}
 	
 	public static String createID()
@@ -79,6 +82,7 @@ public class PollsDBRepository implements PollsRepositoryInterface{
 		}
 		return newPoll;
 	}
+	
 	
 	/* (non-Javadoc)
 	 * @see edu.sjsu.cmpe.voting.repository.PollsRepositoryInterface#getPolls()

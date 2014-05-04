@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import edu.sjsu.cmpe.voting.api.Poll;
+import edu.sjsu.cmpe.voting.api.User;
 
 /**
  * Poll repository Interface
@@ -84,4 +85,6 @@ public interface PollsRepositoryInterface {
 	 *
 	 */
 	List<Poll> getPollByQue(String que);
+	
+	
 }

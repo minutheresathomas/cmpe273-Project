@@ -16,6 +16,8 @@ import edu.sjsu.cmpe.voting.api.Poll;
 import edu.sjsu.cmpe.voting.repository.PollsDBRepository;
 import edu.sjsu.cmpe.voting.repository.PollsRepository;
 import edu.sjsu.cmpe.voting.repository.PollsRepositoryInterface;
+import edu.sjsu.cmpe.voting.repository.UserDBRepository;
+import edu.sjsu.cmpe.voting.repository.UserDBRepositoryInterface;
 import edu.sjsu.cmpe.voting.resources.ModeratorPollResource;
 import edu.sjsu.cmpe.voting.resources.UserPollResource;
 import edu.sjsu.cmpe.voting.ui.resources.AdminResource;
@@ -49,13 +51,14 @@ public class SmsVotingService extends Service<SmsVotingServiceConfiguration>{
 //    	PollsRepositoryInterface pollsRepository = new PollsRepository(
 //    		new ConcurrentHashMap<String, Poll>());
     	PollsRepositoryInterface pollsRepository = new PollsDBRepository();
-    	environment.addResource(new ModeratorPollResource(pollsRepository));
+    	UserDBRepositoryInterface usersRepository = new UserDBRepository();
+//    	environment.addResource(new ModeratorPollResource(pollsRepository));
     	
     	/** Sms-Voting User APIs */
-    	environment.addResource(new UserPollResource(pollsRepository));
+    	environment.addResource(new UserPollResource(pollsRepository, usersRepository));
     	
     	/** Sms-Voting User UI */
     	environment.addResource(new UserResource(pollsRepository));
-    	environment.addResource(new AdminResource(pollsRepository));
+//    	environment.addResource(new AdminResource(pollsRepository));
 	}
 }
