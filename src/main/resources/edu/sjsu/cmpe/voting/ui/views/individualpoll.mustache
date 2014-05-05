@@ -47,7 +47,7 @@
 </form>
 <table id="source">
 {{#poll}}
-<caption>bargraph</caption>
+<caption style="display:none"></caption>
 {{#choices}}
 <thead>
 <tr style="display:none">
@@ -56,9 +56,7 @@
 </tr>
 </thead>
 {{/choices}}
-
 <tbody style="display:none">
-
 {{#choices}}
 <tr >
 <th>{{option}}</th>
@@ -68,8 +66,7 @@
 </tbody>
 {{/poll}}
 </table>
-
-
+<!-- container where graph is loaded -->
 <div id="target" style="width:400px;height:400px">
 </div>
 </div>
