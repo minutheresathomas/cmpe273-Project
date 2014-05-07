@@ -1,0 +1,52 @@
+INFO  [2014-05-06 07:04:07,223] org.reflections.Reflections: Reflections took 105 ms to scan 1 urls, producing 2 keys and 2 values 
+WARN  [2014-05-06 07:04:07,891] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2014-05-06 07:04:07,967] com.yammer.dropwizard.cli.ServerCommand: Starting procurement-service
+INFO  [2014-05-06 07:04:07,968] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2014-05-06 07:04:08,086] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2014-05-06 07:04:08,132] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     / (edu.sjsu.cmpe.voting.procurement.api.resources.RootResource)
+
+INFO  [2014-05-06 07:04:08,132] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2014-05-06 07:04:08,397] org.quartz.impl.StdSchedulerFactory: Using default implementation for ThreadExecutor
+INFO  [2014-05-06 07:04:08,402] org.quartz.simpl.SimpleThreadPool: Job execution threads will use class loader of thread: main
+INFO  [2014-05-06 07:04:08,422] org.quartz.core.SchedulerSignalerImpl: Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+INFO  [2014-05-06 07:04:08,423] org.quartz.core.QuartzScheduler: Quartz Scheduler v.2.1.5 created.
+INFO  [2014-05-06 07:04:08,425] org.quartz.simpl.RAMJobStore: RAMJobStore initialized.
+INFO  [2014-05-06 07:04:08,426] org.quartz.core.QuartzScheduler: Scheduler meta-data: Quartz Scheduler (v2.1.5) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+INFO  [2014-05-06 07:04:08,426] org.quartz.impl.StdSchedulerFactory: Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+INFO  [2014-05-06 07:04:08,426] org.quartz.impl.StdSchedulerFactory: Quartz scheduler version: 2.1.5
+INFO  [2014-05-06 07:04:08,426] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+INFO  [2014-05-06 07:04:08,430] de.spinscale.dropwizard.jobs.JobManager: Jobs to run on application start: []
+INFO  [2014-05-06 07:04:08,430] de.spinscale.dropwizard.jobs.JobManager: Jobs with @Every annotation: [class edu.sjsu.cmpe.voting.procurement.jobs.ProcurementSchedulerJob]
+INFO  [2014-05-06 07:04:08,445] de.spinscale.dropwizard.jobs.JobManager: Jobs with @On annotation: []
+INFO  [2014-05-06 07:04:08,483] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:9080
+INFO  [2014-05-06 07:04:08,490] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:9081
+INFO  [2014-05-06 07:04:15,589] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:9081
+INFO  [2014-05-06 07:04:15,590] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:9080
+INFO  [2014-05-06 07:04:15,590] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2014-05-06 07:04:15,591] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/Users/minu/Documents/workspace-sts-3.4.0.RELEASE/voting-procurement-service/target/classes/}
+INFO  [2014-05-06 07:04:17,643] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/Users/minu/Documents/workspace-sts-3.4.0.RELEASE/voting-procurement-service/target/classes/}
+INFO  [2014-05-06 07:04:17,644] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+INFO  [2014-05-06 07:04:17,747] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+INFO  [2014-05-06 07:04:17,747] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+INFO  [2014-05-06 07:04:17,917] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
