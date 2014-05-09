@@ -1,11 +1,14 @@
 cmpe273-Project
-===============
-team:polaris
- 
- Team Members : 
- Minu Theresa Thomas
- Parin Modi
- Navya Gattupally
- Shivadeepthi
- Deeksha Sudhakar
- 
+
+
+WEB VOTING
+
+team: Polaris
+
+
+collaborators:
+Minu Theresa Thomas
+Shiva Deepthi
+Parin Modi
+Navya Gattupally
+Deeksha Sudhakar
